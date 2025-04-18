@@ -27,7 +27,7 @@ unsigned char i;
 
 
 
-const unsigned char text[]="It's a me, Mario!"; // zero terminated c string
+const unsigned char text[]="Israel should be president"; // zero terminated c string
 
 const unsigned char palette[]={
 BLACK, DK_GY, LT_GY, WHITE,
@@ -48,11 +48,11 @@ void main (void) {
 		
 	// set a starting point on the screen
 	// vram_adr(NTADR_A(x,y));
-	vram_adr(NTADR_A(10,10)); // screen is 32 x 30 tiles
+	vram_adr(NTADR_A(0,0)); // screen is 32 x 30 tiles
 
 	i = 0;
 	while(text[i]){
-		vram_put(text[i]); // this pushes 1 char to the screen
+		vram_put(text[i]); // this pushes 1 char to the screen (only one byte)
 		++i;
 	}	
 	

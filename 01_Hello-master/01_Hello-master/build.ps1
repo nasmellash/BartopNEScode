@@ -2,9 +2,9 @@
 param([string]$Action = "build")
 
 # CONFIGURE THESE 3 PATHS (must point to your .exe files)
-$CC65 = "C:\cc65\bin\cc65.exe"    # ← Verify this path exists!
-$CA65 = "C:\cc65\bin\ca65.exe"    # ← Verify this path exists!
-$LD65 = "C:\cc65\bin\ld65.exe"    # ← Verify this path exists!
+$CC65 = "C:\cc65\bin\cc65.exe"    # ← Verify this path exists! (Make sure this leads to your cc65.exe file wherever it is)
+$CA65 = "C:\cc65\bin\ca65.exe"    # ← Verify this path exists! (same for this one)
+$LD65 = "C:\cc65\bin\ld65.exe"    # ← Verify this path exists! (same for this one)
 
 $Project = "hello"
 $Config = "nrom_32k_vert.cfg"
@@ -39,3 +39,7 @@ switch ($Action.ToLower()) {
     "clean" { Clean }
     default { Build }
 }
+
+# Type in "Set-ExecutionPolicy Bypass -Scope Process -Force" before running the commands:
+# .\build.ps1       (makes the files reappear)
+# .\build.ps1 clean (makes the files dissapear. Do this first before making.)

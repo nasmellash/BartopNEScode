@@ -24,8 +24,8 @@
 .segment	"RODATA"
 
 _text:
-	.byte	$49,$74,$27,$73,$20,$61,$20,$6D,$65,$2C,$20,$4D,$61,$72,$69,$6F
-	.byte	$21,$00
+	.byte	$49,$73,$72,$61,$65,$6C,$20,$73,$68,$6F,$75,$6C,$64,$20,$62,$65
+	.byte	$20,$70,$72,$65,$73,$69,$64,$65,$6E,$74,$00
 _palette:
 	.byte	$0F
 	.byte	$00
@@ -64,8 +64,8 @@ _i:
 	lda     #<(_palette)
 	ldx     #>(_palette)
 	jsr     _pal_bg
-	ldx     #$21
-	lda     #$4A
+	ldx     #$20
+	lda     #$00
 	jsr     _vram_adr
 	lda     #$00
 	sta     _i
